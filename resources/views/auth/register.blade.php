@@ -13,7 +13,21 @@
                         
                         <tml-select-profile></tml-select-profile>
 
-                        <tml-adm-register  iptclass="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                        <tml-input-register  iptclass="form-control{{ $errors->has('userName') ? ' is-invalid' : '' }}" 
+                                          iptvalue="{{ old('userName') }}"
+                                          iptname="userName"
+                                          iptlabel="Nome de Usuário"
+                                          iptid="userName"
+                                          ipttype="text">
+                            
+                            @if ($errors->has('userName'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('userName') }}</strong>
+                                </span>
+                            @endif
+                        </tml-input-register>
+
+                        <tml-input-register  iptclass="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('name') }}"
                                           iptname="name"
                                           iptlabel="Nome"
@@ -25,10 +39,79 @@
                                     <strong>{{ $errors->first('name') }}</strong>
                                 </span>
                             @endif
+                        </tml-input-register>
+
+                        <tml-input-register  iptclass="form-control{{ $errors->has('companyName') ? ' is-invalid' : '' }}" 
+                                          iptvalue="{{ old('companyName') }}"
+                                          iptname="companyName"
+                                          iptlabel="Razão Social"
+                                          iptid="companyName"
+                                          ipttype="text">
                             
-                        </tml-adm-register>
+                            @if ($errors->has('companyName'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('companyName') }}</strong>
+                                </span>
+                            @endif
+                        </tml-input-register>
+
+                        <tml-input-register  iptclass="form-control{{ $errors->has('ctr') ? ' is-invalid' : '' }}" 
+                                          iptvalue="{{ old('ctr') }}"
+                                          iptname="ctr"
+                                          iptlabel="CNPJ"
+                                          iptid="ctr"
+                                          ipttype="text">
+                            
+                            @if ($errors->has('ctr'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('ctr') }}</strong>
+                                </span>
+                            @endif
+                        </tml-input-register>
+
+                        <tml-input-register  iptclass="form-control{{ $errors->has('cel') ? ' is-invalid' : '' }}" 
+                                          iptvalue="{{ old('cel') }}"
+                                          iptname="cel"
+                                          iptlabel="Nrº Celular"
+                                          iptid="cel"
+                                          ipttype="text">
+                            
+                            @if ($errors->has('cel'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('cel') }}</strong>
+                                </span>
+                            @endif
+                        </tml-input-register>
+
+                        <tml-input-register  iptclass="form-control{{ $errors->has('itr') ? ' is-invalid' : '' }}" 
+                                          iptvalue="{{ old('itr') }}"
+                                          iptname="itr"
+                                          iptlabel="CPF"
+                                          iptid="itr"
+                                          ipttype="text">
+                            
+                            @if ($errors->has('itr'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('itr') }}</strong>
+                                </span>
+                            @endif
+                        </tml-input-register>
+
+                        <tml-input-register  iptclass="form-control{{ $errors->has('nic') ? ' is-invalid' : '' }}" 
+                                          iptvalue="{{ old('nic') }}"
+                                          iptname="nic"
+                                          iptlabel="RG"
+                                          iptid="nic"
+                                          ipttype="text">
+                            
+                            @if ($errors->has('nic'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('nic') }}</strong>
+                                </span>
+                            @endif
+                        </tml-input-register>
                         
-                        <tml-adm-register iptclass="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
+                        <tml-input-register iptclass="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('email') }}"
                                           iptname="email"
                                           iptlabel="E-mail"
@@ -41,9 +124,9 @@
                                 </span>
                             @endif
                             
-                        </tml-adm-register>
+                        </tml-input-register>
 
-                        <tml-adm-register iptclass="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
+                        <tml-input-register iptclass="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('password') }}"
                                           iptname="password"
                                           iptlabel="Senha"
@@ -59,24 +142,16 @@
                             <span slot="title">
                                 <tml-title-reset-pass titletext="A senha deve conter ao menos uma letra maiúscula, um número e umcaracter especial."></tml-title-reset-pass>
                             </span>
-                        </tml-adm-register>   
+                        </tml-input-register>   
 
-                        <tml-adm-register iptclass="form-control" 
+                        <tml-input-register iptclass="form-control" 
                                           iptvalue=""
                                           iptname="password_confirmation"
                                           iptlabel="Confirmar senha"
                                           iptid="password-confirm"
                                           ipttype="password">
 
-                        </tml-adm-register>   
-
-                        <!--div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar senha') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div-->
+                        </tml-input-register>   
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

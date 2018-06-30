@@ -70,6 +70,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+        //Send mail to Client, when new users are registred
         Mail::to($data['email'])->send(new WelcomeMail($user));
 
         return $user;
