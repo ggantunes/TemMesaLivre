@@ -27,7 +27,7 @@
                             @endif
                         </tml-input-register>
 
-                        <tml-input-register  iptclass="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                        <tml-input-register v-if="$store.state.profile == 3" iptclass="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('name') }}"
                                           iptname="name"
                                           iptlabel="Nome"
@@ -41,7 +41,7 @@
                             @endif
                         </tml-input-register>
 
-                        <tml-input-register  iptclass="form-control{{ $errors->has('companyName') ? ' is-invalid' : '' }}" 
+                        <tml-input-register v-if="$store.state.profile != 3" iptclass="form-control{{ $errors->has('companyName') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('companyName') }}"
                                           iptname="companyName"
                                           iptlabel="Razão Social"
@@ -55,7 +55,7 @@
                             @endif
                         </tml-input-register>
 
-                        <tml-input-register  iptclass="form-control{{ $errors->has('ctr') ? ' is-invalid' : '' }}" 
+                        <tml-input-register v-if="$store.state.profile != 3" iptclass="form-control{{ $errors->has('ctr') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('ctr') }}"
                                           iptname="ctr"
                                           iptlabel="CNPJ"
@@ -69,7 +69,7 @@
                             @endif
                         </tml-input-register>
 
-                        <tml-input-register  iptclass="form-control{{ $errors->has('cel') ? ' is-invalid' : '' }}" 
+                        <tml-input-register v-if="$store.state.profile == 3" iptclass="form-control{{ $errors->has('cel') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('cel') }}"
                                           iptname="cel"
                                           iptlabel="Nrº Celular"
@@ -83,7 +83,7 @@
                             @endif
                         </tml-input-register>
 
-                        <tml-input-register  iptclass="form-control{{ $errors->has('itr') ? ' is-invalid' : '' }}" 
+                        <tml-input-register v-if="$store.state.profile == 3" iptclass="form-control{{ $errors->has('itr') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('itr') }}"
                                           iptname="itr"
                                           iptlabel="CPF"
@@ -97,7 +97,7 @@
                             @endif
                         </tml-input-register>
 
-                        <tml-input-register  iptclass="form-control{{ $errors->has('nic') ? ' is-invalid' : '' }}" 
+                        <tml-input-register v-if="$store.state.profile == 3" iptclass="form-control{{ $errors->has('nic') ? ' is-invalid' : '' }}" 
                                           iptvalue="{{ old('nic') }}"
                                           iptname="nic"
                                           iptlabel="RG"

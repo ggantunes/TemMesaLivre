@@ -48810,11 +48810,11 @@ var render = function() {
             _vm._v("Selecione o tipo de perfil")
           ]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "ADM" } }, [_vm._v("Administrador")]),
+          _c("option", { attrs: { value: "1" } }, [_vm._v("Administrador")]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "RH" } }, [_vm._v("RH")]),
+          _c("option", { attrs: { value: "2" } }, [_vm._v("RH")]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "P" } }, [_vm._v("Profissional")])
+          _c("option", { attrs: { value: "3" } }, [_vm._v("Profissional")])
         ]
       )
     ])

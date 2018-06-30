@@ -6,9 +6,9 @@
             <p>{{this.$store.state.profile}}</p>
             <select v-on:change="selectProfile($event)" class="form-control" name="profile">
                 <option value="">Selecione o tipo de perfil</option>
-                <option value="ADM">Administrador</option>
-                <option value="RH">RH</option>
-                <option value="P">Profissional</option>
+                <option value="1">Administrador</option>
+                <option value="2">RH</option>
+                <option value="3">Profissional</option>
             </select>                                
         </div>
     </div>
