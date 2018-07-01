@@ -1,5 +1,5 @@
 <template>
-    <button type="submit" v-on:click="register($event)" class="btn btn-primary">Enviar</button>
+    <button type="submit"  class="btn btn-primary">Enviar</button>
 </template>
 
 <script>

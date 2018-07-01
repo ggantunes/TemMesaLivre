@@ -3,9 +3,8 @@
         <label for="name" class="col-md-4 col-form-label text-md-right">Perfil</label>
 
         <div class="col-md-6">
-            <p>{{this.$store.state.profile}}</p>
             <select v-on:change="selectProfile($event)" class="form-control" name="profile">
-                <option value="">Selecione o tipo de perfil</option>
+                <option value="0">Selecione o tipo de perfil</option>
                 <option value="1">Administrador</option>
                 <option value="2">RH</option>
                 <option value="3">Profissional</option>

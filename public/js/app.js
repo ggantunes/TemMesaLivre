@@ -14022,7 +14022,7 @@ Vue.component('example', __webpack_require__(41));
 Vue.component('tml-header', __webpack_require__(44));
 Vue.component('tml-register', __webpack_require__(47));
 Vue.component('tml-title-reset-pass', __webpack_require__(50));
-Vue.component('tml-input-register', __webpack_require__(70));
+Vue.component('tml-input-register', __webpack_require__(53));
 Vue.component('tml-select-profile', __webpack_require__(56));
 
 var app = new Vue({
@@ -48573,15 +48573,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "button",
-    {
-      staticClass: "btn btn-primary",
-      attrs: { type: "submit" },
-      on: {
-        click: function($event) {
-          _vm.register($event)
-        }
-      }
-    },
+    { staticClass: "btn btn-primary", attrs: { type: "submit" } },
     [_vm._v("Enviar")]
   )
 }
@@ -48692,9 +48684,127 @@ if (false) {
 }
 
 /***/ }),
-/* 53 */,
-/* 54 */,
-/* 55 */,
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(54)
+/* template */
+var __vue_template__ = __webpack_require__(55)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\TmlInputRegister.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-97309e9e", Component.options)
+  } else {
+    hotAPI.reload("data-v-97309e9e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['iptclass', 'iptvalue', 'iptname', 'iptlabel', 'iptid', 'ipttype']
+});
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "form-group row" },
+    [
+      _c(
+        "label",
+        {
+          staticClass: "col-md-4 col-form-label text-md-right",
+          attrs: { for: _vm.iptname }
+        },
+        [_vm._v(_vm._s(_vm.iptlabel))]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "col-md-6" },
+        [
+          _c("input", {
+            class: _vm.iptclass,
+            attrs: { id: _vm.iptid, type: _vm.ipttype, name: _vm.iptname },
+            domProps: { value: _vm.iptvalue }
+          }),
+          _vm._v(" "),
+          _vm._t("default")
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _vm._t("title")
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-97309e9e", module.exports)
+  }
+}
+
+/***/ }),
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -48762,7 +48872,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     methods: {
@@ -48792,8 +48901,6 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-6" }, [
-      _c("p", [_vm._v(_vm._s(this.$store.state.profile))]),
-      _vm._v(" "),
       _c(
         "select",
         {
@@ -48806,7 +48913,7 @@ var render = function() {
           }
         },
         [
-          _c("option", { attrs: { value: "" } }, [
+          _c("option", { attrs: { value: "0" } }, [
             _vm._v("Selecione o tipo de perfil")
           ]),
           _vm._v(" "),
@@ -48835,143 +48942,6 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(71)
-/* template */
-var __vue_template__ = __webpack_require__(72)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\TmlInputRegister.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-97309e9e", Component.options)
-  } else {
-    hotAPI.reload("data-v-97309e9e", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 71 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['iptclass', 'iptvalue', 'iptname', 'iptlabel', 'iptid', 'ipttype']
-});
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "form-group row" },
-    [
-      _c(
-        "label",
-        {
-          staticClass: "col-md-4 col-form-label text-md-right",
-          attrs: { for: "name" }
-        },
-        [_vm._v(_vm._s(_vm.iptlabel))]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "col-md-6" },
-        [
-          _c("input", {
-            class: _vm.iptclass,
-            attrs: {
-              id: _vm.iptid,
-              type: _vm.ipttype,
-              name: _vm.iptname,
-              required: "",
-              autofocus: ""
-            },
-            domProps: { value: _vm.iptvalue }
-          }),
-          _vm._v(" "),
-          _vm._t("default")
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _vm._t("title")
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-97309e9e", module.exports)
-  }
-}
 
 /***/ })
 /******/ ]);

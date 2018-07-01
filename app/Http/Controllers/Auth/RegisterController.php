@@ -50,9 +50,16 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'name' => 'string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => ['required','string','min:6', 'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/']
+            'password' => ['required','string','min:6', 'confirmed', 'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/'],
+            'profile' => 'required|string|max:255',
+            'userName' => 'required|string|max:255',
+            'companyName' => 'string|max:255',
+            'ctr' => 'string|max:255', 
+            'itr' => 'string|max:255', 
+            'nic' => 'string|max:255', 
+            'cel' => 'string|max:255'
         ]);
     }
 
@@ -64,11 +71,29 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'name' => $data['name'],
+        //If profile is Professional, cheate the fields below
+        if($data['profile'] == 3){
+            $user = User::create([
+                'profile' => $data['profile'],
+                'userName' => $data['userName'],
+                'name' => $data['name'],
+                'cel' => $data['cel'],
+                'itr' => $data['itr'], //Individual Taxpayer Registry (CPF)
+                'nic' => $data['nic'], //National Identity Card (RG)
+                'email' => $data['email'],
+                'password' => Hash::make($data['password'])
+            ]);
+        //If profile is not Professional, cheate the fields below
+        }else{
+            $user = User::create([
+            'profile' => $data['profile'],
+            'companyName' => $data['companyName'],            
+            'ctr' => $data['ctr'], //Corporate Taxpayer Registry (CNPJ)
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password'])
         ]);
+        }
+        
 
         //Send mail to Client, when new users are registred
         Mail::to($data['email'])->send(new WelcomeMail($user));

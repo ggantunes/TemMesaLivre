@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/clearbd', function () {
     User::truncate();
 });
+
+Route::get('/all', function () {
+    return User::all();
+});

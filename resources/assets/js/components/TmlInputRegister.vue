@@ -1,9 +1,9 @@
 <template>
     <div class="form-group row">
-        <label for="name" class="col-md-4 col-form-label text-md-right">{{iptlabel}}</label>
+        <label v-bind:for="iptname" class="col-md-4 col-form-label text-md-right">{{iptlabel}}</label>
 
         <div class="col-md-6">
-            <input v-bind:id="iptid" v-bind:type="ipttype" v-bind:class="iptclass" v-bind:name="iptname" v-bind:value="iptvalue" required autofocus>
+            <input v-bind:id="iptid" v-bind:type="ipttype" v-bind:class="iptclass" v-bind:name="iptname" v-bind:value="iptvalue">
             <slot></slot>
         </div>
         <slot name="title"></slot>
