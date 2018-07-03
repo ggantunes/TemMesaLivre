@@ -71,6 +71,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $emailConfirmationToken =  md5($data['email']);
+        
+
         //If profile is Professional, cheate the fields below
         if($data['profile'] == 3){
             $user = User::create([
@@ -81,7 +84,8 @@ class RegisterController extends Controller
                 'itr' => $data['itr'], //Individual Taxpayer Registry (CPF)
                 'nic' => $data['nic'], //National Identity Card (RG)
                 'email' => $data['email'],
-                'password' => Hash::make($data['password'])
+                'password' => Hash::make($data['password']),
+                'email_confirmation' => $emailConfirmationToken
             ]);
         //If profile is not Professional, cheate the fields below
         }else{
@@ -90,7 +94,8 @@ class RegisterController extends Controller
             'companyName' => $data['companyName'],            
             'ctr' => $data['ctr'], //Corporate Taxpayer Registry (CNPJ)
             'email' => $data['email'],
-            'password' => Hash::make($data['password'])
+            'password' => Hash::make($data['password']),
+            'email_confirmation' => $emailConfirmationToken
         ]);
         }
         
@@ -100,4 +105,6 @@ class RegisterController extends Controller
 
         return $user;
     }
+
+   
 }

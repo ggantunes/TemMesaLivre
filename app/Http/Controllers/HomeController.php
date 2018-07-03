@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Gate;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Gate::allows('confirmUser')) {
+            return view('home');// The current user can update the post...
+        }else{            
+            return view('unauthorized');
+        }
+        
     }
+
+     
 }

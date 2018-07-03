@@ -12,7 +12,7 @@
                         @csrf
                         
                         <tml-select-profile></tml-select-profile>                        
-                            <tml-input-register v-if="$store.state.profile != 0" iptclass="form-control{{ $errors->has('userName') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile != 0" iptclass="form-control{{ $errors->has('userName') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('userName') }}"
                                             iptname="userName"
                                             iptlabel="Nome de Usuário"
@@ -24,9 +24,9 @@
                                         <strong>{{ $errors->first('userName') }}</strong>
                                     </span>
                                 @endif
-                            </tml-input-register>
+                            </tml-input>
 
-                            <tml-input-register v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('name') }}"
                                             iptname="name"
                                             iptlabel="Nome"
@@ -38,9 +38,9 @@
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
-                            </tml-input-register>
+                            </tml-input>
 
-                            <tml-input-register v-if="$store.state.profile != 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('companyName') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile != 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('companyName') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('companyName') }}"
                                             iptname="companyName"
                                             iptlabel="Razão Social"
@@ -52,9 +52,9 @@
                                         <strong>{{ $errors->first('companyName') }}</strong>
                                     </span>
                                 @endif
-                            </tml-input-register>
+                            </tml-input>
 
-                            <tml-input-register v-if="$store.state.profile != 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('ctr') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile != 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('ctr') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('ctr') }}"
                                             iptname="ctr"
                                             iptlabel="CNPJ"
@@ -66,9 +66,9 @@
                                         <strong>{{ $errors->first('ctr') }}</strong>
                                     </span>
                                 @endif
-                            </tml-input-register>
+                            </tml-input>
 
-                            <tml-input-register v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('cel') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('cel') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('cel') }}"
                                             iptname="cel"
                                             iptlabel="Nrº Celular"
@@ -80,9 +80,9 @@
                                         <strong>{{ $errors->first('cel') }}</strong>
                                     </span>
                                 @endif
-                            </tml-input-register>
+                            </tml-input>
 
-                            <tml-input-register v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('itr') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('itr') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('itr') }}"
                                             iptname="itr"
                                             iptlabel="CPF"
@@ -94,9 +94,9 @@
                                         <strong>{{ $errors->first('itr') }}</strong>
                                     </span>
                                 @endif
-                            </tml-input-register>
+                            </tml-input>
 
-                            <tml-input-register v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('nic') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile == 3 && $store.state.profile != 0" iptclass="form-control{{ $errors->has('nic') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('nic') }}"
                                             iptname="nic"
                                             iptlabel="RG"
@@ -108,9 +108,9 @@
                                         <strong>{{ $errors->first('nic') }}</strong>
                                     </span>
                                 @endif
-                            </tml-input-register>
+                            </tml-input>
                             
-                            <tml-input-register v-if="$store.state.profile != 0" iptclass="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile != 0" iptclass="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('email') }}"
                                             iptname="email"
                                             iptlabel="E-mail"
@@ -123,9 +123,9 @@
                                     </span>
                                 @endif
                                 
-                            </tml-input-register>
+                            </tml-input>
 
-                            <tml-input-register v-if="$store.state.profile != 0" iptclass="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
+                            <tml-input v-if="$store.state.profile != 0" iptclass="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('password') }}"
                                             iptname="password"
                                             iptlabel="Senha"
@@ -141,16 +141,16 @@
                                 <span slot="title">
                                     <tml-title-reset-pass v-if="$store.state.profile != 0" titletext="A senha deve conter ao menos uma letra maiúscula, um número e umcaracter especial."></tml-title-reset-pass>
                                 </span>
-                            </tml-input-register>   
+                            </tml-input>   
 
-                            <tml-input-register v-if="$store.state.profile != 0" iptclass="form-control" 
+                            <tml-input v-if="$store.state.profile != 0" iptclass="form-control" 
                                             iptvalue=""
                                             iptname="password_confirmation"
                                             iptlabel="Confirmar senha"
                                             iptid="password-confirm"
                                             ipttype="password">
 
-                            </tml-input-register>   
+                            </tml-input>   
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <tml-register :disabled="$store.state.profile == 0"></tml-register>

@@ -15,16 +15,16 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();;
+            $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->enum('profile', [1,2,3])->default(3);
             $table->string('userName');
-            $table->string('companyName')->nullable();;
-            $table->string('ctr')->unique()->nullable();; //Corporate Taxpayer Registry (CNPJ)
-            $table->string('itr')->unique()->nullable();; //Individual Taxpayer Registry (CPF)
-            $table->string('nic')->unique()->nullable();; //National Identity Card (RG)
-            $table->string('cel')->nullable();;
+            $table->string('companyName')->nullable();
+            $table->string('ctr')->unique()->nullable(); //Corporate Taxpayer Registry (CNPJ)
+            $table->string('itr')->unique()->nullable(); //Individual Taxpayer Registry (CPF)
+            $table->string('nic')->unique()->nullable(); //National Identity Card (RG)
+            $table->string('cel')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

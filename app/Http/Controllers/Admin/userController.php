@@ -83,4 +83,22 @@ class userController extends Controller
     {
         //
     }
+
+    //This function will validate the email confirmation
+    
+    public function verifyRegister($token){
+        $id = \Auth::user()->id;
+        $user = User::find($id);
+        if($user->email_confirmation == ""){
+            return redirect('home');
+        }
+
+        if($user->email_confirmation === $token){
+            $user->email_confirmation = "";
+            $user->update(array($user));
+            return view('home');
+        }else{
+            return view('unauthorized');
+        }
+    }
 }

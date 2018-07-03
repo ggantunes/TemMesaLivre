@@ -34,8 +34,9 @@ Vue.component('example', require('./components/ExampleComponent.vue'));
 Vue.component('tml-header', require('./components/TmlHeader.vue'));
 Vue.component('tml-register', require('./components/TmlRegister.vue'));
 Vue.component('tml-title-reset-pass', require('./components/TmlTitleResetPass.vue'));
-Vue.component('tml-input-register', require('./components/TmlInputRegister.vue'));
+Vue.component('tml-input', require('./components/TmlInput.vue'));
 Vue.component('tml-select-profile', require('./components/TmlSelectProfile.vue'));
+Vue.component('tml-unauthorized', require('./components/TmlUnauthorized.vue'));
 
 const app = new Vue({
     el: '#app',

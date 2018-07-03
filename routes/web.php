@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Route::get('/home', 'HomeController@index')->name('home')->middleware('can:confirmUser');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/confirmRegister/{token}', 'Admin\UserController@verifyRegister');
 
 Route::get('/clearbd', function () {
     User::truncate();
@@ -26,3 +28,5 @@ Route::get('/clearbd', function () {
 Route::get('/all', function () {
     return User::all();
 });
+
+Route::get('/tableRegister', 'HomeController@index')->name('home');

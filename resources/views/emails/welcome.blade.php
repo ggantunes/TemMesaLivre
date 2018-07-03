@@ -7,7 +7,7 @@
 <body>
 <h2>Bem vindo {{$user['name']}}! Obrigado por se registrar.</h2>
 <br/>
-Ir para o <a href="http://mesalivre.test/home"> site </a>
+Por favor confirme seu cadastro clicando<a href="{{ url('/home/confirmRegister') . '/' . $user['email_confirmation']}}"> aqui </a>
 </body>
  
 </html>
