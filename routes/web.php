@@ -14,6 +14,16 @@ use App\User;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/chooseProfile', function () {
+    return view('choose-profile');
+});
+Route::get('/professionalRegister', function () {
+    return view('registers.professional-register');
+});
+
+Route::get('/rhRegister', function () {
+    return view('registers.rh-register');
+});
 
 Auth::routes();
 

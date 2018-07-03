@@ -75,7 +75,7 @@ class RegisterController extends Controller
         
 
         //If profile is Professional, cheate the fields below
-        if($data['profile'] == 3){
+        if($data['profile'] == "3"){
             $user = User::create([
                 'profile' => $data['profile'],
                 'userName' => $data['userName'],
@@ -91,6 +91,7 @@ class RegisterController extends Controller
         }else{
             $user = User::create([
             'profile' => $data['profile'],
+            'userName' => $data['userName'],
             'companyName' => $data['companyName'],            
             'ctr' => $data['ctr'], //Corporate Taxpayer Registry (CNPJ)
             'email' => $data['email'],

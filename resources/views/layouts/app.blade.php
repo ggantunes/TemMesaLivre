@@ -28,12 +28,13 @@
                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Cadastrar') }}</a>
+                    <a class="nav-link" href="{{ url('chooseProfile') }}">{{ __('Cadastrar') }}</a>
                 </li>
             @else
+                @can('confirmUser')
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                        {{ Auth::user()->name == null ? Auth::user()->userName : Auth::user()->name}} <span class="caret"></span>
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -48,6 +49,7 @@
                         </form>
                     </div>
                 </li>
+                @endcan
             @endguest
         </tml-header>
         <main class="py-4">

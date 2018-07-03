@@ -9,8 +9,8 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                        @csrf                        
-                            <input type="hidden" name="profile" value="1">
+                        @csrf
+                            <input type="hidden" name="profile" value="2">
                             <tml-input iptclass="form-control{{ $errors->has('userName') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('userName') }}"
                                             iptname="userName"

@@ -9,8 +9,8 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                        @csrf                        
-                            <input type="hidden" name="profile" value="1">
+                        @csrf
+                            <input type="hidden" name="profile" value="3">
                             <tml-input iptclass="form-control{{ $errors->has('userName') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('userName') }}"
                                             iptname="userName"
@@ -25,34 +25,64 @@
                                 @endif
                             </tml-input>
 
-                            <tml-input iptclass="form-control{{ $errors->has('companyName') ? ' is-invalid' : '' }}" 
-                                            iptvalue="{{ old('companyName') }}"
-                                            iptname="companyName"
-                                            iptlabel="Razão Social"
-                                            iptid="companyName"
+                            <tml-input iptclass="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" 
+                                            iptvalue="{{ old('name') }}"
+                                            iptname="name"
+                                            iptlabel="Nome"
+                                            iptid="name"
                                             ipttype="text">
                                 
-                                @if ($errors->has('companyName'))
+                                @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('companyName') }}</strong>
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                                 @endif
                             </tml-input>
 
-                            <tml-input iptclass="form-control{{ $errors->has('ctr') ? ' is-invalid' : '' }}" 
-                                            iptvalue="{{ old('ctr') }}"
-                                            iptname="ctr"
-                                            iptlabel="CNPJ"
-                                            iptid="ctr"
+                            
+
+                            <tml-input iptclass="form-control{{ $errors->has('cel') ? ' is-invalid' : '' }}" 
+                                            iptvalue="{{ old('cel') }}"
+                                            iptname="cel"
+                                            iptlabel="Nrº Celular"
+                                            iptid="cel"
                                             ipttype="text">
                                 
-                                @if ($errors->has('ctr'))
+                                @if ($errors->has('cel'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('ctr') }}</strong>
+                                        <strong>{{ $errors->first('cel') }}</strong>
                                     </span>
                                 @endif
                             </tml-input>
 
+                            <tml-input iptclass="form-control{{ $errors->has('itr') ? ' is-invalid' : '' }}" 
+                                            iptvalue="{{ old('itr') }}"
+                                            iptname="itr"
+                                            iptlabel="CPF"
+                                            iptid="itr"
+                                            ipttype="text">
+                                
+                                @if ($errors->has('itr'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('itr') }}</strong>
+                                    </span>
+                                @endif
+                            </tml-input>
+
+                            <tml-input iptclass="form-control{{ $errors->has('nic') ? ' is-invalid' : '' }}" 
+                                            iptvalue="{{ old('nic') }}"
+                                            iptname="nic"
+                                            iptlabel="RG"
+                                            iptid="nic"
+                                            ipttype="text">
+                                
+                                @if ($errors->has('nic'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('nic') }}</strong>
+                                    </span>
+                                @endif
+                            </tml-input>
+                            
                             <tml-input iptclass="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" 
                                             iptvalue="{{ old('email') }}"
                                             iptname="email"
@@ -96,7 +126,7 @@
                             </tml-input>   
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <tml-register ></tml-register>
+                                <tml-register></tml-register>
                             </div>
                         </div>                        
                     </form>
