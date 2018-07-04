@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
 
-class UserController extends Controller
+class PlaceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        return view('registers.places.index');
     }
 
     /**
@@ -82,23 +81,5 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    //This function will validate the email confirmation
-    
-    public function verifyRegister($token){
-        $id = \Auth::user()->id;
-        $user = User::find($id);
-        if($user->email_confirmation == ""){
-            return redirect('home');
-        }
-
-        if($user->email_confirmation === $token){
-            $user->email_confirmation = "";
-            $user->update(array($user));
-            return view('home');
-        }else{
-            return view('unauthorized');
-        }
     }
 }

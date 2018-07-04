@@ -18,11 +18,11 @@ Route::get('/chooseProfile', function () {
     return view('choose-profile');
 });
 Route::get('/professionalRegister', function () {
-    return view('registers.professional-register');
+    return view('registers.professional');
 });
 
 Route::get('/rhRegister', function () {
-    return view('registers.rh-register');
+    return view('registers.rh');
 });
 
 Auth::routes();
@@ -39,4 +39,11 @@ Route::get('/all', function () {
     return User::all();
 });
 
-Route::get('/tableRegister', 'HomeController@index')->name('home');
+
+Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){
+	Route::resource('places', 'PlaceController')->middleware('can:admin');
+	//Route::resource('usuarios', 'UsuariosController');
+	//Route::resource('usuarios', 'UsuariosController')->middleware('can:eAdmin');
+	//Route::resource('autores', 'AutoresController')->middleware('can:eAdmin');
+	//Route::resource('adm', 'AdminController')->middleware('can:eAdmin');
+});
