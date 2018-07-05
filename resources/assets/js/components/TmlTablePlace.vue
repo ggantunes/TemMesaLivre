@@ -17,7 +17,7 @@
             <tbody>                
                 <tr v-for="(item, index) in objList">
                     <td v-for="i in item">{{i | dateFormat}}</td>
-                    <td v-if="(datail || edit || todelete)">
+                    <td class="text-center" v-if="(datail || edit || todelete)">
                         <!-- Implements delete action -->
                         <form v-bind:id="index" v-bind:action="todelete + item.id" method="post">
                             <input type="hidden" name="_method" value="DELETE">
@@ -50,8 +50,8 @@
                 document.getElementById(index).submit();
             },
             //change column order
-            orderColumn: function(coluna){
-                this.ordemAuxCol = coluna;
+            orderColumn: function(column){
+                this.ordemAuxCol = column;
                 if(this.ordemAux.toLowerCase() == "asc"){
                     this.ordemAux = "desc";
                 }else{

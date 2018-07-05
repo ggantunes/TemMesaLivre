@@ -33,8 +33,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/confirmRegister/{token}', 'Admin\UserController@verifyRegister');
 
-Route::get('/clearbd', function () {
+Route::get('/trunc-users', function () {
     User::truncate();
+});
+Route::get('/trunc-locals', function () {
+    Local::truncate();
 });
 
 Route::get('/all', function () {
@@ -43,11 +46,6 @@ Route::get('/all', function () {
     //return DescricaoLocal::all();
 });
 
-
 Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){
 	Route::resource('places', 'LocalController')->middleware('can:admin');
-	//Route::resource('usuarios', 'UsuariosController');
-	//Route::resource('usuarios', 'UsuariosController')->middleware('can:eAdmin');
-	//Route::resource('autores', 'AutoresController')->middleware('can:eAdmin');
-	//Route::resource('adm', 'AdminController')->middleware('can:eAdmin');
 });

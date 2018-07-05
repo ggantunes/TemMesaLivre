@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<tml-page pagesize="10">
+<tml-page pagesize="12">
     <tml-panel title="Dashboard">
         <div class="row">
             @can('admin')

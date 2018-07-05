@@ -48797,7 +48797,7 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _vm._v(
-                "\n                    Bem vindo! Seu cadastro foi realizado com sucesso, mas ainda precisamos sua confirmação em seu e-mail, para que seu acesso seja liberado.\n                "
+                "\n                    Bem vindo! Seu cadastro foi realizado com sucesso. Confirme seu e-mail para que seu acesso seja liberado.\n                "
               )
             ])
           ])
@@ -48908,7 +48908,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row" }, [
       _c("div", { class: _vm.sizeDefinition }, [_vm._t("default")], 2)
     ])
@@ -49626,8 +49626,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             document.getElementById(index).submit();
         },
         //change column order
-        orderColumn: function orderColumn(coluna) {
-            this.ordemAuxCol = coluna;
+        orderColumn: function orderColumn(column) {
+            this.ordemAuxCol = column;
             if (this.ordemAux.toLowerCase() == "asc") {
                 this.ordemAux = "desc";
             } else {
@@ -49791,7 +49791,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _vm.datail || _vm.edit || _vm.todelete
-                    ? _c("td", [
+                    ? _c("td", { staticClass: "text-center" }, [
                         _c(
                           "form",
                           {

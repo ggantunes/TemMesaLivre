@@ -59,7 +59,7 @@
             <input type="number" class="form-control" id="qtd_mesas" name="qtd_mesas" placeholder="Digite a quantidade de mesas" value="{{old('qtd_mesas')}}">
         </div>
         <div class="form-group">
-            <label for="qtd_cadeiras">Quantidade de mesas</label>
+            <label for="qtd_cadeiras">Quantidade de cadeiras</label>
             <input type="number" class="form-control" id="qtd_cadeiras" name="qtd_cadeiras" placeholder="Digite a quantidade de cadeiras" value="{{old('qtd_cadeiras')}}">
         </div>
         <div class="form-group">
@@ -107,7 +107,7 @@
             <input type="number" class="form-control" id="qtd_mesas" name="qtd_mesas" v-model="$store.state.item.qtd_mesas" placeholder="Digite a quantidade de mesas">
         </div>
         <div class="form-group">
-            <label for="qtd_cadeiras">Quantidade de mesas</label>
+            <label for="qtd_cadeiras">Quantidade de cadeiras</label>
             <input type="number" class="form-control" id="qtd_cadeiras" name="qtd_cadeiras" v-model="$store.state.item.qtd_cadeiras" placeholder="Digite a quantidade de cadeiras">
         </div>
         <div class="form-group">

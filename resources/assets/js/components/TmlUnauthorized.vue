@@ -6,7 +6,7 @@
                     <div class="card-header">Não autorizado</div>
 
                     <div class="card-body">
-                        Bem vindo! Seu cadastro foi realizado com sucesso, mas ainda precisamos sua confirmação em seu e-mail, para que seu acesso seja liberado.
+                        Bem vindo! Seu cadastro foi realizado com sucesso. Confirme seu e-mail para que seu acesso seja liberado.
                     </div>
                 </div>
             </div>
