@@ -45,9 +45,11 @@
             }
         },
         methods:{
+            //form submit
             execForm: function(index){
                 document.getElementById(index).submit();
             },
+            //change column order
             orderColumn: function(coluna){
                 this.ordemAuxCol = coluna;
                 if(this.ordemAux.toLowerCase() == "asc"){
@@ -77,6 +79,7 @@
                 order = order.toLowerCase();
                 ordemCol = parseInt(ordemCol);
 
+                //returns the data ordered according to the parameter (order) passed to the component
                 if(order == "asc"){
                     list.sort(function (a,b) {
                     if (Object.values(a)[ordemCol] > Object.values(b)[ordemCol]) {return 1};
@@ -90,7 +93,7 @@
                         return 0;
                     });
                 }
-                
+                //data table filter
                 if(this.buscar){
                     return list.filter(res => {
                         res = Object.values(res);

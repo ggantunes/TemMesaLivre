@@ -9,10 +9,7 @@
 <script>
     export default {
         
-        props:['titletext'],
-        mounted() {
-            console.log(this.titletext);
-        }
+        props:['titletext'],        
     }
 </script>
 

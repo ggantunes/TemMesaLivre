@@ -149,8 +149,6 @@ class LocalController extends Controller
             $data['image'] = url('/storage/images/') . '/' . explode("/", $path)[2];
         }        
 
-        
-
         //relationship with user_id
         $user = auth()->user();
         $user->locals()->find($id)->update($data);                

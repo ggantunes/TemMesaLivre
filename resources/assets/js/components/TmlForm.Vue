@@ -16,7 +16,8 @@
         	}
         },
         computed:{
-        	defineMethod: function(){
+			//returns the apropriated method to the form
+			defineMethod: function(){
         		if(this.method.toLowerCase() == "post" || this.method.toLowerCase() == "get"){
         			return this.method.toLowerCase();
     			}
