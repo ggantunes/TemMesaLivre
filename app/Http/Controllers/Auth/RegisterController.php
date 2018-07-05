@@ -56,9 +56,9 @@ class RegisterController extends Controller
             'profile' => 'required|string|max:255',
             'userName' => 'required|string|max:255',
             'companyName' => 'string|max:255',
-            'ctr' => 'string|max:255', 
-            'itr' => 'string|max:255', 
-            'nic' => 'string|max:255', 
+            'ctr' => 'string|max:255|unique:users', 
+            'itr' => 'string|max:255|unique:users', 
+            'nic' => 'string|max:255|unique:users', 
             'cel' => 'string|max:255'
         ]);
     }

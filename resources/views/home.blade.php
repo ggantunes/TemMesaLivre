@@ -14,6 +14,11 @@
                 <h2>Bem Vindo {{Auth::user()->name}}! Em breve teremos novidades...</h2>
             </div>
             @endcan
+             @can('rh')
+            <div class="col-md-12">
+                <h2>Bem Vindo {{Auth::user()->name}}! Em breve teremos novidades...</h2>
+            </div>
+            @endcan
         </div>
     </tml-panel>
 </tml-page>

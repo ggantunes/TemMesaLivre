@@ -96,7 +96,8 @@ class UserController extends Controller
         if($user->email_confirmation === $token){
             $user->email_confirmation = "";
             $user->update(array($user));
-            return view('home');
+            return redirect()->to('/home'); 
+            //return view('home');
         }else{
             return view('unauthorized');
         }
