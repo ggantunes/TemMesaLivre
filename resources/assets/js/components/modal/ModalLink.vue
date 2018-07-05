@@ -30,7 +30,7 @@
 		
 	</span>    
 </template>
-
+ 
 <script>
     export default {
         props:['type', 'name', 'title', 'css', 'item', 'url'],
