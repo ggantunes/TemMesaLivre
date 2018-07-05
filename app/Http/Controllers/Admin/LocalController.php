@@ -73,6 +73,7 @@ class LocalController extends Controller
             "horario_disponivel" => "required"
         ]);
 
+        //return error message if any field is empty
         if($validate->fails()){
             return redirect()->back()->withErrors($validate)->withInput();
         }
@@ -99,7 +100,6 @@ class LocalController extends Controller
      */
     public function show($id)
     {
-        
         return Local::find($id);
     }
 
@@ -135,6 +135,7 @@ class LocalController extends Controller
             "horario_disponivel" => "required"
         ]);
 
+        //return error message if any field is empty
         if($validate->fails()){
             return redirect()->back()->withErrors($validate)->withInput();
         }

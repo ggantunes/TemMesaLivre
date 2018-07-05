@@ -28,7 +28,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    
+    //send email when reset account password
     public function sendPasswordResetNotification($token)
     {        
         $this->notify(new ResetPassword($token));

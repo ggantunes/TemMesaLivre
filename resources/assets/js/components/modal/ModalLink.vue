@@ -1,30 +1,30 @@
 <template>
 	<span>
 		<span v-if="item">
-			<button v-on:click="setForm()" v-if="!tipo || (tipo != 'button' && tipo != 'link')" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + nome">
-				{{titulo}}
+			<button v-on:click="setForm()" v-if="!type || (type != 'button' && type != 'link')" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + name">
+				{{title}}
 			</button>
 
-			<button v-on:click="setForm()" v-if="tipo == 'button'" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + nome">
-				{{titulo}}
+			<button v-on:click="setForm()" v-if="type == 'button'" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + name">
+				{{title}}
 			</button>
 
-			<a v-on:click="setForm()" href="#" v-if="tipo == 'link'" v-bind:class="css || ''" data-toggle="modal" v-bind:data-target="'#' + nome">
-				{{titulo}}
+			<a v-on:click="setForm()" href="#" v-if="type == 'link'" v-bind:class="css || ''" data-toggle="modal" v-bind:data-target="'#' + name">
+				{{title}}
 			</a>	
 		</span>
 
 		<span v-if="!item">
-			<button v-if="!tipo || (tipo != 'button' && tipo != 'link')" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + nome">
-				{{titulo}}
+			<button v-if="!type || (type != 'button' && type != 'link')" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + name">
+				{{title}}
 			</button>
 
-			<button v-if="tipo == 'button'" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + nome">
-				{{titulo}}
+			<button v-if="type == 'button'" type="button" v-bind:class=" css || 'btn btn-primary'" data-toggle="modal" v-bind:data-target="'#' + name">
+				{{title}}
 			</button>
 
-			<a href="#" v-if="tipo == 'link'" v-bind:class="css || ''" data-toggle="modal" v-bind:data-target="'#' + nome">
-				{{titulo}}
+			<a href="#" v-if="type == 'link'" v-bind:class="css || ''" data-toggle="modal" v-bind:data-target="'#' + name">
+				{{title}}
 			</a>	
 		</span>
 		
@@ -33,12 +33,11 @@
 
 <script>
     export default {
-        props:['tipo', 'nome', 'titulo', 'css', 'item', 'url'],
+        props:['type', 'name', 'title', 'css', 'item', 'url'],
         methods:{
         	setForm:function(){
 				//Get data by id, from table "locals" 				
 				axios.get(this.url + this.item.id).then(res => {
-					console.log('res.data', res.data)
         			this.$store.commit('setItem', res.data);
         		});
         	}

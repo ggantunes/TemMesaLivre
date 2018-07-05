@@ -3,16 +3,16 @@
 @section('content')
 
 <tml-page pagesize="12">
+    <!--list error message -->
     @if($errors->all())
         <div class="alert alert-danger alert-dismissible text-center" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden></span></button>
-        
                 @foreach($errors->all() as $key =>$value)
                     <li>{{$value}}</li>   
                 @endforeach
-        
         </div>
     @endif
+    <!--end list error message -->
 
     <tml-panel title="Lista de Lugares">
         <tml-table-place
@@ -22,12 +22,12 @@
             create="#create" datail="/admin/places/" edit="/admin/places/" todelete="/admin/places/" 
             token="{{ csrf_token() }}" modal="sim">
         </tml-table-place>
+        <!--paginate-->
         <div class="float-right">
             {{$modelList}}
         </div>
+        <!--end paginate-->
         </tml-panel>
-        <!--paginate-->
-        
 </tml-page>
 
 <tml-modal name="adicionar" title_header="Adicionar">

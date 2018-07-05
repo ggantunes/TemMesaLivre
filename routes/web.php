@@ -38,8 +38,8 @@ Route::get('/clearbd', function () {
 });
 
 Route::get('/all', function () {
-    //return User::all();
-    return Local::all();
+    return User::all();
+    //return Local::all();
     //return DescricaoLocal::all();
 });
 

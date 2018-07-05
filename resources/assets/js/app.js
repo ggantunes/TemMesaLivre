@@ -38,11 +38,11 @@ Vue.component('tml-select-profile', require('./components/TmlSelectProfile.vue')
 Vue.component('tml-unauthorized', require('./components/TmlUnauthorized.vue'));
 Vue.component('tml-page', require('./components/TmlPage.vue'));
 Vue.component('tml-panel', require('./components/TmlPanel.vue'));
-Vue.component('tml-caixa', require('./components/Caixa.vue'));
+Vue.component("tml-box", require("./components/TmlBox.vue"));
 Vue.component('tml-table-place', require('./components/TmlTablePlace.vue'));
 Vue.component('tml-modallink', require('./components/modal/ModalLink.vue'));
 Vue.component('tml-modal', require('./components/modal/Modal.vue'));
-Vue.component('tml-form', require('./components/Form.vue'));
+Vue.component("tml-form", require("./components/TmlForm.vue"));
 Vue.component('tml-local-desc', require('./components/TmlLocalDescription.vue'));
 Vue.component('tml-image', require('./components/TmlImage.vue'));
 

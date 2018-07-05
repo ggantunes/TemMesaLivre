@@ -1,7 +1,7 @@
 <template>
     <div>
         <a v-if="create && !modal" v-bind:href="create">Adicionar</a>
-            <tml-modallink v-if="create && modal" tipo="botao" nome="adicionar" titulo="Adicionar" css=""></tml-modallink>
+            <tml-modallink v-if="create && modal" type="button" name="adicionar" title="Adicionar" css=""></tml-modallink>
         <div class="form-group pull-right">                
             <input type="search" placeholder="Buscar" class="form-control" v-model="buscar">
         </div>
@@ -19,34 +19,14 @@
                     <td v-for="i in item">{{i | dateFormat}}</td>
                     <td v-if="(datail || edit || todelete)">
                         <!-- Implements delete action -->
-                        <form v-bind:id="index" v-if="todelete && token" v-bind:action="todelete + item.id" method="post">
+                        <form v-bind:id="index" v-bind:action="todelete + item.id" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" v-bind:value="token">
-
-                            <a v-if="datail && !modal" v-bind:href="datail">Detalhe |</a>
-                            <tml-modallink v-if="datail && modal" v-bind:item="item" v-bind:url="datail" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></tml-modallink>
-
-                            <a v-if="edit && !modal" v-bind:href="edit"> Editar |</a>
-                            <tml-modallink v-if="edit && modal" v-bind:item="item" v-bind:url="edit" tipo="link" nome="editar" titulo=" Editar |" css=""></tml-modallink>
+                            
+                            <tml-modallink v-if="datail" v-bind:item="item" v-bind:url="datail" type="link" name="detalhe" title=" Detalhe |" css=""></tml-modallink>
+                            <tml-modallink v-if="edit" v-bind:item="item" v-bind:url="edit" type="link" name="editar" title=" Editar |" css=""></tml-modallink>
                             <a href="#" v-on:click="execForm(index)">Deletar</a>
-                        </form>
-
-                        <span v-if="!token">
-                            <a v-if="datail && !modal" v-bind:href="datail">Detalhe |</a>
-                            <tml-modallink v-if="datail && modal" v-bind:item="item" v-bind:url="datail" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></tml-modallink>
-
-                            <a v-if="edit && !modal" v-bind:href="edit"> Editar |</a>
-                            <tml-modallink v-if="edit && modal" tipo="link" v-bind:item="item" v-bind:url="edit" nome="editar" titulo=" Editar |" css=""></tml-modallink>
-                            <a v-if="todelete" v-bind:href="todelete">Deletar</a>
-                        </span>
-                        <span v-if="token && !todelete">
-                            <a v-if="datail && !modal" v-bind:href="datail">Detalhe |</a>
-                            <tml-modallink v-if="datail && modal" v-bind:item="item" v-bind:url="datail" tipo="link" nome="detalhe" titulo=" Detalhe |" css=""></tml-modallink>
-
-                            <a v-if="edit && !modal" v-bind:href="edit"> Editar</a>
-                            <tml-modallink v-if="edit && modal" tipo="link" v-bind:item="item" v-bind:url="edit" nome="editar" titulo=" Editar" css=""></tml-modallink>
-                        </span>
-                        
+                        </form>                        
                     </td>
                 </tr>
             </tbody>

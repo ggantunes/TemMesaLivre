@@ -29,6 +29,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->profile == "1";
         });
 
+        Gate::define('professional', function($user){
+            return $user->profile == "3";
+        });
+
         Gate::define('confirmUser', function($user){
             return $user->email_confirmation == "";
         });

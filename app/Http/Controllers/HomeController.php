@@ -24,9 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        //if email confirmation = true, redirect to homepage
         if (Gate::allows('confirmUser')) {
             $totalLocals = Local::where('user_id', '=', auth()->user()->id)->count();
-            
             return view('home', compact('totalLocals'));// The current user can update the post...
         }else{            
             return view('unauthorized');

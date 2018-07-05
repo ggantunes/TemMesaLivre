@@ -14336,11 +14336,11 @@ Vue.component('tml-select-profile', __webpack_require__(58));
 Vue.component('tml-unauthorized', __webpack_require__(61));
 Vue.component('tml-page', __webpack_require__(64));
 Vue.component('tml-panel', __webpack_require__(67));
-Vue.component('tml-caixa', __webpack_require__(73));
+Vue.component("tml-box", __webpack_require__(109));
 Vue.component('tml-table-place', __webpack_require__(78));
 Vue.component('tml-modallink', __webpack_require__(81));
 Vue.component('tml-modal', __webpack_require__(84));
-Vue.component('tml-form', __webpack_require__(87));
+Vue.component("tml-form", __webpack_require__(106));
 Vue.component('tml-local-desc', __webpack_require__(90));
 Vue.component('tml-image', __webpack_require__(93));
 
@@ -49461,10 +49461,6 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(68)
-}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(71)
@@ -49473,7 +49469,7 @@ var __vue_template__ = __webpack_require__(72)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -49508,46 +49504,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(69);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(13)("47229778", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-049872a8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TmlPanel.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-049872a8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TmlPanel.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.blue {\n    border-color: #0d4a96;\n}\n.blue > .panel-heading {\n    color: #f7f7f7;\n    background-color: #0d4a96;\n    border-color: #0d4a96;\n}\n.orange {\n    border-color: #e85e0d;\n}\n.orange > .panel-heading {\n    color: #f7f7f7;\n    background-color: #e85e0d;\n    border-color: #e85e0d;\n}\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 68 */,
+/* 69 */,
 /* 70 */
 /***/ (function(module, exports) {
 
@@ -49594,16 +49552,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['title', 'color'],
-    computed: {
-        defineColor: function defineColor() {
+    props: ['title', 'color']
 
-            return "card " + (this.color || "card");
-        }
-    }
 });
 
 /***/ }),
@@ -49614,12 +49566,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { class: _vm.defineColor }, [
-    _vm.title
-      ? _c("div", { staticClass: "card-header" }, [_vm._v(_vm._s(_vm.title))])
-      : _vm._e(),
-    _vm._v(" "),
-    _c("div", { staticClass: "card-body" }, [_vm._t("default")], 2)
+  return _c("div", { staticClass: "card" }, [
+    _c(
+      "div",
+      { staticClass: "card-body" },
+      [
+        _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.title))]),
+        _vm._v(" "),
+        _vm._t("default")
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = []
@@ -49633,162 +49590,11 @@ if (false) {
 }
 
 /***/ }),
-/* 73 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(74)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(76)
-/* template */
-var __vue_template__ = __webpack_require__(77)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\Caixa.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-c044dde6", Component.options)
-  } else {
-    hotAPI.reload("data-v-c044dde6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 74 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(75);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(13)("69eeb055", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c044dde6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Caixa.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c044dde6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Caixa.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(12)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.bg-aqua{\n    background-color: #00c0ef !important;\n}\n.small-box:hover {\n    text-decoration: none;\n    color: #f9f9f9;\n}\n.small-box>.small-box-footer:hover {\n    color: #fff;\n    background: rgba(0,0,0,0.15);\n}\n.small-box {\n    border-radius: 2px;\n    position: relative;\n    display: block;\n    margin-bottom: 20px;\n    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);\n            box-shadow: 0 1px 1px rgba(0,0,0,0.1);\n    color: #fff;\n}\n.small-box>.inner {\n    padding: 10px;\n}\n.small-box h3, .small-box p {\n    z-index: 5;\n}\n.small-box h3 {\n    font-size: 38px;\n    font-weight: bold;\n    margin: 0 0 10px 0;\n    white-space: nowrap;\n    padding: 0;\n}\n.small-box p {\n    font-size: 15px;\n}\np {\n    margin: 0 0 10px;\n}\n.small-box .icon {\n    -webkit-transition: all .3s linear;\n    transition: all .3s linear;\n    position: absolute;\n    top: -10px;\n    right: 10px;\n    z-index: 0;\n    font-size: 90px;\n    color: rgba(0,0,0,0.15);\n}\n.small-box:hover .icon {\n    font-size: 95px;\n}\n.small-box>.small-box-footer {\n    position: relative;\n    text-align: center;\n    padding: 3px 0;\n    color: #fff;\n    color: rgba(255,255,255,0.8);\n    display: block;\n    z-index: 10;\n    background: rgba(0,0,0,0.1);\n    text-decoration: none;\n}\na {\n    color: #3c8dbc;\n}\na:hover, a:active, a:focus {\n    outline: none;\n    text-decoration: none;\n    color: #72afd2;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 76 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['qtd', 'titulo', 'url', 'cor', 'icone'],
-    computed: {
-        defineCor: function defineCor() {
-            return "background-color:" + this.cor + " !important;";
-        }
-    }
-});
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "small-box", style: _vm.defineCor }, [
-    _c("div", { staticClass: "inner" }, [
-      _c("h3", [_vm._v(_vm._s(_vm.qtd))]),
-      _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.titulo))])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "icon" }, [_c("i", { class: _vm.icone })]),
-    _vm._v(" "),
-    _c("a", { staticClass: "small-box-footer", attrs: { href: _vm.url } }, [
-      _vm._v("\n      Inserir "),
-      _c("i", { staticClass: "fa fa-arrow-circle-right" })
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-c044dde6", module.exports)
-  }
-}
-
-/***/ }),
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
 /* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49841,26 +49647,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -49999,9 +49785,9 @@ var render = function() {
       _vm.create && _vm.modal
         ? _c("tml-modallink", {
             attrs: {
-              tipo: "botao",
-              nome: "adicionar",
-              titulo: "Adicionar",
+              type: "button",
+              name: "adicionar",
+              title: "Adicionar",
               css: ""
             }
           })
@@ -50076,182 +49862,70 @@ var render = function() {
                   _vm._v(" "),
                   _vm.datail || _vm.edit || _vm.todelete
                     ? _c("td", [
-                        _vm.todelete && _vm.token
-                          ? _c(
-                              "form",
+                        _c(
+                          "form",
+                          {
+                            attrs: {
+                              id: index,
+                              action: _vm.todelete + item.id,
+                              method: "post"
+                            }
+                          },
+                          [
+                            _c("input", {
+                              attrs: {
+                                type: "hidden",
+                                name: "_method",
+                                value: "DELETE"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("input", {
+                              attrs: { type: "hidden", name: "_token" },
+                              domProps: { value: _vm.token }
+                            }),
+                            _vm._v(" "),
+                            _vm.datail
+                              ? _c("tml-modallink", {
+                                  attrs: {
+                                    item: item,
+                                    url: _vm.datail,
+                                    type: "link",
+                                    name: "detalhe",
+                                    title: " Detalhe |",
+                                    css: ""
+                                  }
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm.edit
+                              ? _c("tml-modallink", {
+                                  attrs: {
+                                    item: item,
+                                    url: _vm.edit,
+                                    type: "link",
+                                    name: "editar",
+                                    title: " Editar |",
+                                    css: ""
+                                  }
+                                })
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c(
+                              "a",
                               {
-                                attrs: {
-                                  id: index,
-                                  action: _vm.todelete + item.id,
-                                  method: "post"
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.execForm(index)
+                                  }
                                 }
                               },
-                              [
-                                _c("input", {
-                                  attrs: {
-                                    type: "hidden",
-                                    name: "_method",
-                                    value: "DELETE"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("input", {
-                                  attrs: { type: "hidden", name: "_token" },
-                                  domProps: { value: _vm.token }
-                                }),
-                                _vm._v(" "),
-                                _vm.datail && !_vm.modal
-                                  ? _c("a", { attrs: { href: _vm.datail } }, [
-                                      _vm._v("Detalhe |")
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.datail && _vm.modal
-                                  ? _c("tml-modallink", {
-                                      attrs: {
-                                        item: item,
-                                        url: _vm.datail,
-                                        tipo: "link",
-                                        nome: "detalhe",
-                                        titulo: " Detalhe |",
-                                        css: ""
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.edit && !_vm.modal
-                                  ? _c("a", { attrs: { href: _vm.edit } }, [
-                                      _vm._v(" Editar |")
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.edit && _vm.modal
-                                  ? _c("tml-modallink", {
-                                      attrs: {
-                                        item: item,
-                                        url: _vm.edit,
-                                        tipo: "link",
-                                        nome: "editar",
-                                        titulo: " Editar |",
-                                        css: ""
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: { href: "#" },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.execForm(index)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Deletar")]
-                                )
-                              ],
-                              1
+                              [_vm._v("Deletar")]
                             )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        !_vm.token
-                          ? _c(
-                              "span",
-                              [
-                                _vm.datail && !_vm.modal
-                                  ? _c("a", { attrs: { href: _vm.datail } }, [
-                                      _vm._v("Detalhe |")
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.datail && _vm.modal
-                                  ? _c("tml-modallink", {
-                                      attrs: {
-                                        item: item,
-                                        url: _vm.datail,
-                                        tipo: "link",
-                                        nome: "detalhe",
-                                        titulo: " Detalhe |",
-                                        css: ""
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.edit && !_vm.modal
-                                  ? _c("a", { attrs: { href: _vm.edit } }, [
-                                      _vm._v(" Editar |")
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.edit && _vm.modal
-                                  ? _c("tml-modallink", {
-                                      attrs: {
-                                        tipo: "link",
-                                        item: item,
-                                        url: _vm.edit,
-                                        nome: "editar",
-                                        titulo: " Editar |",
-                                        css: ""
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.todelete
-                                  ? _c("a", { attrs: { href: _vm.todelete } }, [
-                                      _vm._v("Deletar")
-                                    ])
-                                  : _vm._e()
-                              ],
-                              1
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _vm.token && !_vm.todelete
-                          ? _c(
-                              "span",
-                              [
-                                _vm.datail && !_vm.modal
-                                  ? _c("a", { attrs: { href: _vm.datail } }, [
-                                      _vm._v("Detalhe |")
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.datail && _vm.modal
-                                  ? _c("tml-modallink", {
-                                      attrs: {
-                                        item: item,
-                                        url: _vm.datail,
-                                        tipo: "link",
-                                        nome: "detalhe",
-                                        titulo: " Detalhe |",
-                                        css: ""
-                                      }
-                                    })
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.edit && !_vm.modal
-                                  ? _c("a", { attrs: { href: _vm.edit } }, [
-                                      _vm._v(" Editar")
-                                    ])
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                _vm.edit && _vm.modal
-                                  ? _c("tml-modallink", {
-                                      attrs: {
-                                        tipo: "link",
-                                        item: item,
-                                        url: _vm.edit,
-                                        nome: "editar",
-                                        titulo: " Editar",
-                                        css: ""
-                                      }
-                                    })
-                                  : _vm._e()
-                              ],
-                              1
-                            )
-                          : _vm._e()
+                          ],
+                          1
+                        )
                       ])
                     : _vm._e()
                 ],
@@ -50363,14 +50037,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['tipo', 'nome', 'titulo', 'css', 'item', 'url'],
+    props: ['type', 'name', 'title', 'css', 'item', 'url'],
     methods: {
         setForm: function setForm() {
             var _this = this;
 
             //Get data by id, from table "locals" 				
             axios.get(this.url + this.item.id).then(function (res) {
-                console.log('res.data', res.data);
                 _this.$store.commit('setItem', res.data);
             });
         }
@@ -50388,7 +50061,7 @@ var render = function() {
   return _c("span", [
     _vm.item
       ? _c("span", [
-          !_vm.tipo || (_vm.tipo != "button" && _vm.tipo != "link")
+          !_vm.type || (_vm.type != "button" && _vm.type != "link")
             ? _c(
                 "button",
                 {
@@ -50396,7 +50069,7 @@ var render = function() {
                   attrs: {
                     type: "button",
                     "data-toggle": "modal",
-                    "data-target": "#" + _vm.nome
+                    "data-target": "#" + _vm.name
                   },
                   on: {
                     click: function($event) {
@@ -50404,11 +50077,11 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n\t\t\t" + _vm._s(_vm.titulo) + "\n\t\t")]
+                [_vm._v("\n\t\t\t" + _vm._s(_vm.title) + "\n\t\t")]
               )
             : _vm._e(),
           _vm._v(" "),
-          _vm.tipo == "button"
+          _vm.type == "button"
             ? _c(
                 "button",
                 {
@@ -50416,7 +50089,7 @@ var render = function() {
                   attrs: {
                     type: "button",
                     "data-toggle": "modal",
-                    "data-target": "#" + _vm.nome
+                    "data-target": "#" + _vm.name
                   },
                   on: {
                     click: function($event) {
@@ -50424,11 +50097,11 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n\t\t\t" + _vm._s(_vm.titulo) + "\n\t\t")]
+                [_vm._v("\n\t\t\t" + _vm._s(_vm.title) + "\n\t\t")]
               )
             : _vm._e(),
           _vm._v(" "),
-          _vm.tipo == "link"
+          _vm.type == "link"
             ? _c(
                 "a",
                 {
@@ -50436,7 +50109,7 @@ var render = function() {
                   attrs: {
                     href: "#",
                     "data-toggle": "modal",
-                    "data-target": "#" + _vm.nome
+                    "data-target": "#" + _vm.name
                   },
                   on: {
                     click: function($event) {
@@ -50444,7 +50117,7 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("\n\t\t\t" + _vm._s(_vm.titulo) + "\n\t\t")]
+                [_vm._v("\n\t\t\t" + _vm._s(_vm.title) + "\n\t\t")]
               )
             : _vm._e()
         ])
@@ -50452,7 +50125,7 @@ var render = function() {
     _vm._v(" "),
     !_vm.item
       ? _c("span", [
-          !_vm.tipo || (_vm.tipo != "button" && _vm.tipo != "link")
+          !_vm.type || (_vm.type != "button" && _vm.type != "link")
             ? _c(
                 "button",
                 {
@@ -50460,14 +50133,14 @@ var render = function() {
                   attrs: {
                     type: "button",
                     "data-toggle": "modal",
-                    "data-target": "#" + _vm.nome
+                    "data-target": "#" + _vm.name
                   }
                 },
-                [_vm._v("\n\t\t\t" + _vm._s(_vm.titulo) + "\n\t\t")]
+                [_vm._v("\n\t\t\t" + _vm._s(_vm.title) + "\n\t\t")]
               )
             : _vm._e(),
           _vm._v(" "),
-          _vm.tipo == "button"
+          _vm.type == "button"
             ? _c(
                 "button",
                 {
@@ -50475,14 +50148,14 @@ var render = function() {
                   attrs: {
                     type: "button",
                     "data-toggle": "modal",
-                    "data-target": "#" + _vm.nome
+                    "data-target": "#" + _vm.name
                   }
                 },
-                [_vm._v("\n\t\t\t" + _vm._s(_vm.titulo) + "\n\t\t")]
+                [_vm._v("\n\t\t\t" + _vm._s(_vm.title) + "\n\t\t")]
               )
             : _vm._e(),
           _vm._v(" "),
-          _vm.tipo == "link"
+          _vm.type == "link"
             ? _c(
                 "a",
                 {
@@ -50490,10 +50163,10 @@ var render = function() {
                   attrs: {
                     href: "#",
                     "data-toggle": "modal",
-                    "data-target": "#" + _vm.nome
+                    "data-target": "#" + _vm.name
                   }
                 },
-                [_vm._v("\n\t\t\t" + _vm._s(_vm.titulo) + "\n\t\t")]
+                [_vm._v("\n\t\t\t" + _vm._s(_vm.title) + "\n\t\t")]
               )
             : _vm._e()
         ])
@@ -50629,7 +50302,7 @@ var render = function() {
                   staticClass: "btn btn-secondary",
                   attrs: { type: "button", "data-dismiss": "modal" }
                 },
-                [_vm._v("Close")]
+                [_vm._v("Fechar")]
               )
             ],
             2
@@ -50668,143 +50341,9 @@ if (false) {
 }
 
 /***/ }),
-/* 87 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(0)
-/* script */
-var __vue_script__ = __webpack_require__(88)
-/* template */
-var __vue_template__ = __webpack_require__(89)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\Form.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-13820e8a", Component.options)
-  } else {
-    hotAPI.reload("data-v-13820e8a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 88 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['css', 'action', 'method', 'enctype', 'token'],
-  data: function data() {
-    return {
-      alterMethod: ""
-    };
-  },
-  computed: {
-    defineMethod: function defineMethod() {
-      if (this.method.toLowerCase() == "post" || this.method.toLowerCase() == "get") {
-        return this.method.toLowerCase();
-      }
-
-      if (this.method.toLowerCase() == "put") {
-        this.alterMethod = "put";
-      }
-
-      if (this.method.toLowerCase() == "delete") {
-        this.alterMethod = "delete";
-      }
-
-      return "post";
-    }
-  }
-});
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "form",
-    {
-      class: _vm.css,
-      attrs: {
-        action: _vm.action,
-        method: _vm.defineMethod,
-        enctype: _vm.enctype
-      }
-    },
-    [
-      _vm.alterMethod
-        ? _c("input", {
-            attrs: { type: "hidden", name: "_method" },
-            domProps: { value: _vm.alterMethod }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.token
-        ? _c("input", {
-            attrs: { type: "hidden", name: "_token" },
-            domProps: { value: _vm.token }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm._t("default")
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-13820e8a", module.exports)
-  }
-}
-
-/***/ }),
+/* 87 */,
+/* 88 */,
+/* 89 */,
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -50995,6 +50534,308 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(107)
+/* template */
+var __vue_template__ = __webpack_require__(108)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\TmlForm.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-403333d0", Component.options)
+  } else {
+    hotAPI.reload("data-v-403333d0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['css', 'action', 'method', 'enctype', 'token'],
+  data: function data() {
+    return {
+      alterMethod: ""
+    };
+  },
+  computed: {
+    defineMethod: function defineMethod() {
+      if (this.method.toLowerCase() == "post" || this.method.toLowerCase() == "get") {
+        return this.method.toLowerCase();
+      }
+
+      if (this.method.toLowerCase() == "put") {
+        this.alterMethod = "put";
+      }
+
+      if (this.method.toLowerCase() == "delete") {
+        this.alterMethod = "delete";
+      }
+
+      return "post";
+    }
+  }
+});
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "form",
+    {
+      class: _vm.css,
+      attrs: {
+        action: _vm.action,
+        method: _vm.defineMethod,
+        enctype: _vm.enctype
+      }
+    },
+    [
+      _vm.alterMethod
+        ? _c("input", {
+            attrs: { type: "hidden", name: "_method" },
+            domProps: { value: _vm.alterMethod }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.token
+        ? _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.token }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm._t("default")
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-403333d0", module.exports)
+  }
+}
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(110)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(112)
+/* template */
+var __vue_template__ = __webpack_require__(113)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\TmlBox.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9a598422", Component.options)
+  } else {
+    hotAPI.reload("data-v-9a598422", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(111);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(13)("2049b685", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9a598422\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TmlBox.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9a598422\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TmlBox.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(12)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.bg-aqua{\n    background-color: #00c0ef !important;\n}\n.small-box:hover {\n    text-decoration: none;\n    color: #f9f9f9;\n}\n.small-box>.small-box-footer:hover {\n    color: #fff;\n    background: rgba(0,0,0,0.15);\n}\n.small-box {\n    border-radius: 2px;\n    position: relative;\n    display: block;\n    margin-bottom: 20px;\n    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);\n            box-shadow: 0 1px 1px rgba(0,0,0,0.1);\n    color: #fff;\n}\n.small-box>.inner {\n    padding: 10px;\n}\n.small-box h3, .small-box p {\n    z-index: 5;\n}\n.small-box h3 {\n    font-size: 38px;\n    font-weight: bold;\n    margin: 0 0 10px 0;\n    white-space: nowrap;\n    padding: 0;\n}\n.small-box p {\n    font-size: 15px;\n}\np {\n    margin: 0 0 10px;\n}\n.small-box .icon {\n    -webkit-transition: all .3s linear;\n    transition: all .3s linear;\n    position: absolute;\n    top: -10px;\n    right: 10px;\n    z-index: 0;\n    font-size: 90px;\n    color: rgba(0,0,0,0.15);\n}\n.small-box:hover .icon {\n    font-size: 95px;\n}\n.small-box>.small-box-footer {\n    position: relative;\n    text-align: center;\n    padding: 3px 0;\n    color: #fff;\n    color: rgba(255,255,255,0.8);\n    display: block;\n    z-index: 10;\n    background: rgba(0,0,0,0.1);\n    text-decoration: none;\n}\na {\n    color: #3c8dbc;\n}\na:hover, a:active, a:focus {\n    outline: none;\n    text-decoration: none;\n    color: #72afd2;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['qtd', 'title', 'url', 'color', 'icon'],
+    computed: {
+        setColor: function setColor() {
+            return "background-color:" + this.color + " !important;";
+        }
+    }
+});
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "small-box", style: _vm.setColor }, [
+    _c("div", { staticClass: "inner" }, [
+      _c("h3", [_vm._v(_vm._s(_vm.qtd))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.title))])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "icon" }, [_c("i", { class: _vm.icon })]),
+    _vm._v(" "),
+    _c("a", { staticClass: "small-box-footer", attrs: { href: _vm.url } }, [
+      _vm._v("\n      Inserir "),
+      _c("i", { staticClass: "fa fa-arrow-circle-right" })
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-9a598422", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

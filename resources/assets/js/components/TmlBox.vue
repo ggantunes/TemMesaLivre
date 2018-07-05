@@ -1,12 +1,12 @@
 <template>
-    <div class="small-box" v-bind:style="defineCor">
+    <div class="small-box" v-bind:style="setColor">
         <div class="inner">
           <h3>{{qtd}}</h3>
 
-          <p>{{titulo}}</p>
+          <p>{{title}}</p>
         </div>
         <div class="icon">
-          <i v-bind:class="icone"></i>
+          <i v-bind:class="icon"></i>
         </div>
         <a v-bind:href="url" class="small-box-footer">
           Inserir <i class="fa fa-arrow-circle-right"></i>
@@ -16,10 +16,10 @@
 
 <script>
     export default {
-        props: ['qtd', 'titulo', 'url' ,'cor', 'icone'],
+        props: ['qtd', 'title', 'url' ,'color', 'icon'],
         computed:{
-            defineCor:function(){
-                return "background-color:" +this.cor+" !important;";
+            setColor:function(){
+                return "background-color:" +this.color+" !important;";
             }
         }
     };
