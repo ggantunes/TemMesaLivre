@@ -16,7 +16,8 @@
                                             iptname="userName"
                                             iptlabel="Nome de Usuário"
                                             iptid="userName"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="30">
                                 
                                 @if ($errors->has('userName'))
                                     <span class="invalid-feedback" role="alert">
@@ -30,7 +31,8 @@
                                             iptname="companyName"
                                             iptlabel="Razão Social"
                                             iptid="companyName"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="50">
                                 
                                 @if ($errors->has('companyName'))
                                     <span class="invalid-feedback" role="alert">
@@ -44,7 +46,8 @@
                                             iptname="ctr"
                                             iptlabel="CNPJ"
                                             iptid="ctr"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="20">
                                 
                                 @if ($errors->has('ctr'))
                                     <span class="invalid-feedback" role="alert">
@@ -58,7 +61,8 @@
                                             iptname="email"
                                             iptlabel="E-mail"
                                             iptid="email"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="50">
                                 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -73,7 +77,8 @@
                                             iptname="password"
                                             iptlabel="Senha"
                                             iptid="password"
-                                            ipttype="password">
+                                            ipttype="password"
+                                            iptmaxlength="30">
                                 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -91,7 +96,8 @@
                                             iptname="password_confirmation"
                                             iptlabel="Confirmar senha"
                                             iptid="password-confirm"
-                                            ipttype="password">
+                                            ipttype="password"
+                                            iptmaxlength="30">
 
                             </tml-input>   
                         <div class="form-group row mb-0">

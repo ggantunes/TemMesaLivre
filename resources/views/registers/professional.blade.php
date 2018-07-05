@@ -16,7 +16,8 @@
                                             iptname="userName"
                                             iptlabel="Nome de Usuário"
                                             iptid="userName"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="30">
                                 
                                 @if ($errors->has('userName'))
                                     <span class="invalid-feedback" role="alert">
@@ -30,7 +31,8 @@
                                             iptname="name"
                                             iptlabel="Nome"
                                             iptid="name"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="50">
                                 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
@@ -46,7 +48,8 @@
                                             iptname="cel"
                                             iptlabel="Nrº Celular"
                                             iptid="cel"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="14">
                                 
                                 @if ($errors->has('cel'))
                                     <span class="invalid-feedback" role="alert">
@@ -60,7 +63,8 @@
                                             iptname="itr"
                                             iptlabel="CPF"
                                             iptid="itr"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="14">
                                 
                                 @if ($errors->has('itr'))
                                     <span class="invalid-feedback" role="alert">
@@ -74,7 +78,8 @@
                                             iptname="nic"
                                             iptlabel="RG"
                                             iptid="nic"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="14">
                                 
                                 @if ($errors->has('nic'))
                                     <span class="invalid-feedback" role="alert">
@@ -88,7 +93,8 @@
                                             iptname="email"
                                             iptlabel="E-mail"
                                             iptid="email"
-                                            ipttype="text">
+                                            ipttype="text"
+                                            iptmaxlength="50">
                                 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -103,7 +109,8 @@
                                             iptname="password"
                                             iptlabel="Senha"
                                             iptid="password"
-                                            ipttype="password">
+                                            ipttype="password"
+                                            iptmaxlength="30">
                                 
                                     @if ($errors->has('password'))
                                         <span class="invalid-feedback" role="alert">
@@ -121,7 +128,8 @@
                                             iptname="password_confirmation"
                                             iptlabel="Confirmar senha"
                                             iptid="password-confirm"
-                                            ipttype="password">
+                                            ipttype="password"
+                                            iptmaxlength="30">
 
                             </tml-input>   
                         <div class="form-group row mb-0">

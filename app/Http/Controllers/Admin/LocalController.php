@@ -90,7 +90,7 @@ class LocalController extends Controller
         $user = auth()->user();
         $user->locals()->create($data);
 
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Registro inserido com sucesso!');
 
     }
 
@@ -154,7 +154,7 @@ class LocalController extends Controller
         //relationship with user_id
         $user = auth()->user();
         $user->locals()->find($id)->update($data);                
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Registro atualizado com sucesso!');
     }
 
     /**
@@ -166,6 +166,6 @@ class LocalController extends Controller
     public function destroy($id)
     {
         Local::find($id)->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Registro removido com sucesso!');        
     }
 }

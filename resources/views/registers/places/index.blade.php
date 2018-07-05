@@ -6,12 +6,19 @@
     <!--list error message -->
     @if($errors->all())
         <div class="alert alert-danger alert-dismissible text-center" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden></span></button>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
                 @foreach($errors->all() as $key =>$value)
                     <li>{{$value}}</li>   
                 @endforeach
         </div>
     @endif
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-dismissible text-center" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="fa fa-close"></i></button>
+            {{ session()->get('success') }}
+        </div>        
+    @endif
+
     <!--end list error message -->
 
     <tml-panel title="Lista de Lugares">
