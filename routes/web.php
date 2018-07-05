@@ -2,6 +2,7 @@
 use App\User;
 use App\DescricaoLocal;
 use App\Local;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,10 +41,11 @@ Route::get('/trunc-locals', function () {
     Local::truncate();
 });
 
-Route::get('/all', function () {
+Route::get('/all', function () {    
     //return User::all();
-    return Local::all();
+    //return Local::all();
     //return DescricaoLocal::all();
+
 });
 
 Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){

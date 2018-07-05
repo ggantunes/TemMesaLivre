@@ -16,29 +16,8 @@ class LocalController extends Controller
      */
     public function index()
     {
-       
         $modelList = Local::listLocals(5);
         $localDescription = DescricaoLocal::all();
-        
-        //Enumerate description local
-        foreach ($modelList as $key => $value) {
-            
-            switch ($value->descricao) {
-                case '1':
-                    $value->descricao = 'Sala';
-                    break;
-                case '2':
-                    $value->descricao = 'Sala de Reunião';
-                    break;
-                case '3':
-                    $value->descricao = 'Sala com videoconferência';
-                    break;
-                case '4':
-                    $value->descricao = 'Lounge';
-                    break;                
-            }            
-        }
-
         return view('registers.places.index', compact('modelList', 'localDescription'));
     }
 

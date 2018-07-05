@@ -19,13 +19,23 @@ class Local extends Model
      	return $this->belongsTo('App\User','user_id');
      }
 
+    public function descricaoLocal(){
+        return $this->hasOne('App\DescricaoLocal', 'id');
+    }
+
      public static function listLocals($pages){
      	$user = auth()->user(); 
         
          //list of local, by user_id
-        return $listLocals = DB::table('locals')
-                 ->select('locals.id','locals.descricao', 'locals.endereco', 'locals.cidade', 'locals.qtd_mesas', 'locals.qtd_cadeiras', 'locals.custo_hora', 'locals.periodo_disponivel', 'locals.horario_disponivel')
+        
+         return $listLocals = DB::table('locals')                 
                  ->join('users', 'users.id', '=', 'locals.user_id')
+                 ->join('descricao_locals', 'locals.descricao', '=', 'descricao_locals.id')
+                 ->select('locals.id','locals.descricao', 
+                          'locals.endereco', 'locals.cidade', 
+                          'locals.qtd_mesas', 'locals.qtd_cadeiras', 
+                          'locals.custo_hora', 'locals.periodo_disponivel', 
+                          'locals.horario_disponivel', 'descricao_locals.descricao')
                  ->whereNull('locals.deleted_at')
                  ->where('locals.user_id', '=', $user->id)
                  ->paginate($pages);
