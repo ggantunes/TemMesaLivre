@@ -20,12 +20,11 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        profile: ""
+        item: {}
     },
     mutations: {
         setItem(state, obj) {
-            console.log(obj)
-            state.profile = obj;
+            state.item = obj;
         }
     }
 });
@@ -44,8 +43,13 @@ Vue.component('tml-table-place', require('./components/TmlTablePlace.vue'));
 Vue.component('tml-modallink', require('./components/modal/ModalLink.vue'));
 Vue.component('tml-modal', require('./components/modal/Modal.vue'));
 Vue.component('tml-form', require('./components/Form.vue'));
+Vue.component('tml-local-desc', require('./components/TmlLocalDescription.vue'));
+Vue.component('tml-image', require('./components/TmlImage.vue'));
 
 const app = new Vue({
     el: '#app',
-    store
+    store,
+    mounted: function () {
+        document.getElementById("app").style.display = "block";
+    }
 });

@@ -1,5 +1,7 @@
 <?php
 use App\User;
+use App\DescricaoLocal;
+use App\Local;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,12 +38,14 @@ Route::get('/clearbd', function () {
 });
 
 Route::get('/all', function () {
-    return User::all();
+    //return User::all();
+    return Local::all();
+    //return DescricaoLocal::all();
 });
 
 
 Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){
-	Route::resource('places', 'PlaceController')->middleware('can:admin');
+	Route::resource('places', 'LocalController')->middleware('can:admin');
 	//Route::resource('usuarios', 'UsuariosController');
 	//Route::resource('usuarios', 'UsuariosController')->middleware('can:eAdmin');
 	//Route::resource('autores', 'AutoresController')->middleware('can:eAdmin');

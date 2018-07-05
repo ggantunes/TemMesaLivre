@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use App\Local;
 class HomeController extends Controller
 {
     /**
@@ -24,7 +25,9 @@ class HomeController extends Controller
     public function index()
     {
         if (Gate::allows('confirmUser')) {
-            return view('home');// The current user can update the post...
+            $totalLocals = Local::where('user_id', '=', auth()->user()->id)->count();
+            
+            return view('home', compact('totalLocals'));// The current user can update the post...
         }else{            
             return view('unauthorized');
         }

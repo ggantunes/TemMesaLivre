@@ -6,7 +6,7 @@
     <div class="row">
         @can('admin')
         <div class="col-md-4">
-            <tml-caixa qtd="10" titulo="Cadastro de Lugares" url="{{route('places.index')}}" cor="orange" icone="fa fa-map-marker"></tml-caixa>
+            <tml-caixa qtd="{{$totalLocals}}" titulo="Cadastro de Lugares" url="{{route('places.index')}}" cor="orange" icone="fa fa-map-marker"></tml-caixa>
         </div>
         @endcan
     </div>

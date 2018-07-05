@@ -33,4 +33,9 @@ class User extends Authenticatable
     {        
         $this->notify(new ResetPassword($token));
     }
+
+    //create relationships with locals table
+    public function locals(){
+        return $this->hasMany('App\Local');
+    }
 }

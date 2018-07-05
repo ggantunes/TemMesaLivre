@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div id="app" style="display:none">
         <tml-header title="{{ config('app.name', 'Tem Mesa Livre') }}" url="{{ url('/') }}">
             @guest
                 <li class="nav-item">

@@ -14,7 +14,12 @@ class PlaceController extends Controller
      */
     public function index()
     {
-        return view('registers.places.index');
+        $modelList = json_encode ([
+            ["id"=>1, "titulo"=>'mesa 1',"descricao"=> "faria lima"],
+            ["id"=>2, "titulo"=>'mesa 2',"descricao"=> "av paulista"]
+            
+        ]);
+        return view('registers.places.index', compact('modelList'));
     }
 
     /**
