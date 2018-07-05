@@ -1,60 +1,31 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<h2>Tecnologias utilizadas:</h2> 
+PHP 7.1<br>
+Laravel 5.6<br>
+Vue js 2.5<br>
+Servidor Laragon com banco de Dados SQLite<br>
+<h2>Análide do escopo:</h2>
+<p>Tive algumas dúvidas quanto ao cadastro de Adm liberado para todos, mas em contato com a equipe e também com o Sr Vibbraneo, as dúvidas foram sanadas e o desenvolvimento foi iniciado</p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+<p>
+<h2>Estimativa em horas para cada atividade:</h2>
+<ul>
+<li>1. TELA INICIAL: 4 horas</li>
+<li>2. CADASTRO DE USUÁRIO ADMINISTRADOR: 11 horas</li>
+<li>3. CADASTRO DE USUÁRIO RH: 2 horas</li>
+<li>4. CADASTRO DE USUÁRIO PROFISSIONAL: 2 horas</li>
+<li>5. CADASTRO DE LUGARES: 12 horas</li>
+<li>6. MODIFICAÇÕES NOS LOCAIS CADASTRADOS: 3 horas</li>
+<li>7. EXCLUSÃO DE LOCAIS CADASTRADOS: 2 horas</li>
+<li>8. CADASTRO DE PROFISSIONAIS: 10</li>
+<li>9. MODIFICAÇÃO NOS DADOS DE PROFISSIONAIS: 3 horas</li>
+<li>10. EXCLUSÃO DE PROFISSIONAIS: 2 horas</li>
+<li>11. PESQUISA DE PROFISSIONAIS: 5 horas</li>
+<li>12. PESQUISA DE LOCAIS: 7 horas</li>
+<li>13. RESERVA DE LOCAIS: 11 horas</li>
+<li><b>Estimativa de entrega em dias úteis:</b> 16 dias(estimando 5 horas trabalhadas por dia</li>
+</ul>  
 </p>
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p><h2>Dicas:</h2>
+Utilize a rota <b>/trunc-users</b> para zerar a tabela de usuários, ou <b>trunc-locals</b> para zerar a tabela de locais cadastrados
+</p>
