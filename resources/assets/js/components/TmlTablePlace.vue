@@ -23,7 +23,7 @@
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" v-bind:value="token">
                             
-                            <tml-modallink v-if="datail" v-bind:item="item" v-bind:url="datail" type="link" name="detalhe" title=" Detalhe |" css=""></tml-modallink>
+                            <tml-modallink v-if="datail" v-bind:item="item" v-bind:url="datail" type="link" name="detalhe" title=" Imagem |" css=""></tml-modallink>
                             <tml-modallink v-if="edit" v-bind:item="item" v-bind:url="edit" type="link" name="editar" title=" Editar |" css=""></tml-modallink>
                             <a href="#" v-on:click="execForm(index)">Deletar</a>
                         </form>                        

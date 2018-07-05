@@ -49892,7 +49892,7 @@ var render = function() {
                                     url: _vm.datail,
                                     type: "link",
                                     name: "detalhe",
-                                    title: " Detalhe |",
+                                    title: " Imagem |",
                                     css: ""
                                   }
                                 })
@@ -50258,9 +50258,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['name', 'title_header']
+    props: ['name', 'title_header', 'icon']
 });
 
 /***/ }),
@@ -50281,9 +50282,17 @@ var render = function() {
       _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
         _c("div", { staticClass: "modal-content" }, [
           _c("div", { staticClass: "modal-header" }, [
-            _c("h5", { staticClass: "modal-title" }, [
-              _vm._v(_vm._s(_vm.title_header))
-            ]),
+            !_vm.icon
+              ? _c("h5", { staticClass: "modal-title" }, [
+                  _vm._v(_vm._s(_vm.title_header))
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.icon
+              ? _c("h5", { staticClass: "modal-title" }, [
+                  _c("i", { staticClass: "fa fa-save" })
+                ])
+              : _vm._e(),
             _vm._v(" "),
             _vm._m(0)
           ]),
@@ -50506,7 +50515,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['src']
+    props: ['src', 'width']
 });
 
 /***/ }),
@@ -50517,7 +50526,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("img", { attrs: { width: "100", src: _vm.src } })])
+  return _c("div", [_c("img", { attrs: { width: _vm.width, src: _vm.src } })])
 }
 var staticRenderFns = []
 render._withStripped = true

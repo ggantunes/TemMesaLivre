@@ -124,10 +124,8 @@
     </span>
 </tml-modal>
 
-<tml-modal name="detalhe" v-bind:title_header="$store.state.item.endereco">
-    <p>@{{$store.state.item.cidade}}</p>
-        <tml-image v-bind:src="$store.state.item.image"></tml-image>
-    </p>
+<tml-modal name="detalhe" v-bind:icon="true" title_header="">
+    <tml-image width="100%" v-bind:src="$store.state.item.image"></tml-image>
 </tml-modal>
     
 @endsection

@@ -78,11 +78,13 @@ class LocalController extends Controller
             return redirect()->back()->withErrors($validate)->withInput();
         }
         
-        //Save image in storage/app/public/images
-        $path = $request->image->store('public/images');
+        if(isset($request->image)){
+            //Save image in storage/app/public/images
+            $path = $request->image->store('public/images');
 
-        //Just a temporary solution to test
-        $data['image'] = url('/storage/images/') . '/' . explode("/", $path)[2];
+            //Just a temporary solution to test
+            $data['image'] = url('/storage/images/') . '/' . explode("/", $path)[2];
+        }
 
         //relationship with user_id
         $user = auth()->user();
@@ -141,10 +143,13 @@ class LocalController extends Controller
         }
 
         //Save image in storage/app/public/images
-        $path = $request->image->store('public/images');
+        if(isset($request->image)){
+            $path = $request->image->store('public/images');
+            //Just a temporary solution to test
+            $data['image'] = url('/storage/images/') . '/' . explode("/", $path)[2];
+        }        
 
-        //Just a temporary solution to test
-        $data['image'] = url('/storage/images/') . '/' . explode("/", $path)[2];
+        
 
         //relationship with user_id
         $user = auth()->user();
